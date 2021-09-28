@@ -1,14 +1,33 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Body, Container } from "./Styled";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import { Container } from "./Styled";
 import Sidebar from "../components/Sidebar/index";
+import { sidebar } from "../utils/sidebar";
+import Notfound from "../components/Notfound/index";
 
 export const Root = () => {
   return (
     <Router>
       <Container>
-        <Sidebar>body</Sidebar>
-        <Body>Body</Body>
+        <Switch>
+          {sidebar.map(({ id, path, Component }) => (
+            <Route path={path} component={Sidebar} />
+          ))}
+        </Switch>
+        <Switch>
+          {sidebar.map(({ id, path, Component }) => (
+            <Route path={path} component={Component} />
+          ))}
+          <Route exact path="/">
+            <Redirect to="/buyurtmalar" />
+          </Route>
+          <Route path="*" component={Notfound} />
+        </Switch>
       </Container>
     </Router>
   );

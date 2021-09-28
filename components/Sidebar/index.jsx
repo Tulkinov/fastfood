@@ -22,7 +22,7 @@ export const Sidebar = () => {
           <Wrapper.Desc>Online maxsulot sotuvi</Wrapper.Desc>
         </Wrapper>
       </Header>
-      <Wrapper left>
+      <Wrapper down>
         {sidebar.map(({ title, Icon, path }) => (
           <Link activeStyle={activeStyle} to={path}>
             <IconWrapper>

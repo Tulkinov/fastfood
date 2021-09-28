@@ -5,16 +5,17 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 300px;
+  min-width: 300px;
   height: 100vh;
-  border: 1px solid red;
   padding: 30px 0;
+  background: white;
 `;
 export const Header = styled.div`
   display: flex;
   padding: 0 24px;
   height: 100px;
   align-items: center;
-  margin-bottom: 64px;
+  margin-bottom: 50px;
 `;
 
 Header.Logo = styled.img`
@@ -28,6 +29,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding-right: 24px;
+  height: ${({ down }) => down && "100%"};
 `;
 
 Wrapper.Title = styled.div`
@@ -57,7 +59,7 @@ export const Link = styled(NavLink)`
   color: #2d3a45;
   width: 100%;
   padding: 10px 40px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border-radius: 0px 6px 6px 0px;
   transition: all 0.3s;
 `;

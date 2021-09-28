@@ -5,6 +5,8 @@ import { ReactComponent as filiallar } from "../assats/icons/filiallar.svg";
 import { ReactComponent as mijozlar } from "../assats/icons/mijozlar.svg";
 import { ReactComponent as xisobot } from "../assats/icons/xisobot.svg";
 import { ReactComponent as setting } from "../assats/icons/setting.svg";
+import Generic from "../pages/Generic";
+import Buyurtmalar from "../pages/Buyurtmalar";
 
 export const sidebar = [
   {
@@ -12,7 +14,7 @@ export const sidebar = [
     title: "Buyurtmalar",
     path: "/buyurtmalar",
     Icon: buyurtmalar,
-    Component: "",
+    Component: Buyurtmalar,
     hidden: false,
   },
   {
@@ -20,7 +22,7 @@ export const sidebar = [
     title: "Mahsulotlar",
     path: "/mahsulotlar",
     Icon: maxsulotlar,
-    Component: "",
+    Component: Generic,
     hidden: false,
   },
   {
@@ -28,7 +30,7 @@ export const sidebar = [
     title: "Kategoriya",
     path: "/kategariya",
     Icon: kategoriyalar,
-    Component: "",
+    Component: Generic,
     hidden: false,
   },
   {
@@ -36,7 +38,7 @@ export const sidebar = [
     title: "Filiallar",
     path: "/filiallar",
     Icon: filiallar,
-    Component: "",
+    Component: Generic,
     hidden: false,
   },
   {
@@ -44,7 +46,7 @@ export const sidebar = [
     title: "Mijozlar",
     path: "/mijorlar",
     Icon: mijozlar,
-    Component: "",
+    Component: Generic,
     hidden: false,
   },
   {
@@ -52,7 +54,7 @@ export const sidebar = [
     title: "Hisobot",
     path: "/hisobot",
     Icon: xisobot,
-    Component: "",
+    Component: Generic,
     hidden: false,
   },
   {
@@ -60,7 +62,7 @@ export const sidebar = [
     title: "Hodimlar",
     path: "/hodimlar",
     Icon: setting,
-    Component: "",
+    Component: Generic,
     hidden: false,
   },
   {
@@ -68,7 +70,7 @@ export const sidebar = [
     title: "Katalog",
     path: "/katalog",
     Icon: setting,
-    Component: "",
+    Component: Generic,
     hidden: false,
   },
 ];
