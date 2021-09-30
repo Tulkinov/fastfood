@@ -1,17 +1,36 @@
 import styled from "styled-components";
-import { ReactComponent as plus } from "../../assats/icons/plus.svg";
-import { ReactComponent as menuRight } from "../../assats/icons/menuRight.svg";
-import { ReactComponent as menuLeft } from "../../assats/icons/menuLeft.svg";
+import { ReactComponent as plus } from "../../../assats/icons/plus.svg";
+import { ReactComponent as menuRight } from "../../../assats/icons/menuRight.svg";
+import { ReactComponent as menuLeft } from "../../../assats/icons/menuLeft.svg";
+
+const getOrder = ({ order }) => {
+  switch (order) {
+    case "1":
+      return 1;
+    case "2":
+      return 3;
+    case "3":
+      return 2;
+    default:
+      return 1;
+  }
+};
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 `;
 
 export const Header = styled.div`
   display: flex;
   background: white;
+  @media (max-width: 1440px) {
+    flex-direction: column;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -21,10 +40,17 @@ export const Wrapper = styled.div`
   align-items: center;
   border: 1px solid #e5e5e5;
   padding: 10px 40px;
+  @media (max-width: 1440px) {
+    order: ${getOrder};
+    display: ${({ order }) => order === "3" && "none"};
+    width: 100%;
+  }
 `;
+
 export const Add = styled.div`
   display: flex;
 `;
+
 Add.Plus = styled(plus)`
   width: 36px;
   height: 36px;
@@ -69,14 +95,17 @@ Tab.Item = styled.div`
 `;
 
 export const Toggle = styled.div`
-  display: flex;
+  display: ${({ toggle }) => (toggle ? "none" : "flex")};
   justify-content: space-between;
   align-items: center;
   background: #edeff3;
   border-radius: 24px;
-  width: 100px;
   height: 50px;
   padding: 0 6px;
+  @media (max-width: 1440px) {
+    display: flex;
+    margin-left: auto;
+  }
 `;
 
 export const IconWrapper = styled.div`

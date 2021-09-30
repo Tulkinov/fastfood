@@ -9,6 +9,8 @@ export const Container = styled.div`
   height: 100vh;
   padding: 30px 0;
   background: white;
+  position: sticky;
+  top: 0;
 `;
 export const Header = styled.div`
   display: flex;
