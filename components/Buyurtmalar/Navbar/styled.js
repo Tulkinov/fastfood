@@ -35,11 +35,13 @@ export const Header = styled.div`
 
 export const Wrapper = styled.div`
   display: flex;
+  justify-content: center;
   width: ${({ center }) => (center ? "100%" : "320px")};
   height: 90px;
   align-items: center;
   border: 1px solid #e5e5e5;
   padding: 10px 40px;
+  width: 100%;
   @media (max-width: 1440px) {
     order: ${getOrder};
     display: ${({ order }) => order === "3" && "none"};

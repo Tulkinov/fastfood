@@ -1,33 +1,10 @@
 import React from "react";
-import { Container, Wrapper } from "./styled";
-import ProductCard from "../../ProductCard/index";
-import { card } from "../../../mock/card";
+import MenuH from "../MenuH/index";
+import MenuV from "../MenuV/index";
+// import { Container } from "./styled";
 
-export const Body = () => {
-  return (
-    <Container>
-      <Wrapper>
-        {card.yangi.map((value) => (
-          <ProductCard value={value} />
-        ))}
-      </Wrapper>
-      <Wrapper>
-        {card.qabul.map((value) => (
-          <ProductCard value={value} />
-        ))}
-      </Wrapper>
-      <Wrapper>
-        {card.jonatilgan.map((value) => (
-          <ProductCard value={value} />
-        ))}
-      </Wrapper>
-      <Wrapper>
-        {card.yopilgan.map((value) => (
-          <ProductCard value={value} />
-        ))}
-      </Wrapper>
-    </Container>
-  );
+export const Body = ({ active }) => {
+  return <div>{active ? <MenuH /> : <MenuV />}</div>;
 };
 
 export default Body;

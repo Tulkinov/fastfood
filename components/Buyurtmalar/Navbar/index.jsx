@@ -11,7 +11,7 @@ import {
   IconWrapper,
 } from "./styled";
 
-export const Navbar = () => {
+export const Navbar = ({ onClick }) => {
   const [isActive, setisActive] = useState("Yangi");
   const [on, seton] = useState(true);
   return (
@@ -62,10 +62,22 @@ export const Navbar = () => {
         {/* 3 */}
         <Wrapper order="3">
           <Toggle>
-            <IconWrapper active={on} onClick={() => seton(true)}>
+            <IconWrapper
+              active={on}
+              onClick={() => {
+                onClick(true);
+                seton(true);
+              }}
+            >
               <MenuRigth />
             </IconWrapper>
-            <IconWrapper active={!on} onClick={() => seton(false)}>
+            <IconWrapper
+              active={!on}
+              onClick={() => {
+                onClick(false);
+                seton(false);
+              }}
+            >
               <MenuLeft />
             </IconWrapper>
           </Toggle>

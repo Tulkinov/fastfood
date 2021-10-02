@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Body from "./Body/Body";
 import Navbar from "./Navbar";
 import { Container } from "./Navbar/styled";
 
 export const Buyurtmalar = () => {
+  const [active, setActive] = useState(true);
   return (
     <Container>
-      <Navbar />
-      <Body />
+      <Navbar onClick={(state) => setActive(state)} />
+      <Body active={active} />
     </Container>
   );
 };
